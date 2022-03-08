@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="another_activiny">بدء التطبيق</string>
+    <string name="counter">بدء العداد</string>
+    <string name="please_enter_a_count_number">الرجاء إدخال عدد الدقائق</string>
+    <string name="pro_message">شراء برو لتغيير الإعداد</string>
+    <string name="save_setting">حفظ الإعداد</string>
+    <string name="turn_off_screen">اختبار التطبيق</string>
+    <string name="turn_on_screen">توقف التطبيق</string>
+    <string name="enter_black_time">أدخل الوقت الأسود</string>
+    <string name="M1">سيتيح التطبيق تشغيل الشاشة لمدة 15 دقيقة ، ثم يظل الظلام لمدة 15 ثانية.          في أي وقت ، يمكنك الضغط على الشاشة لمدة ثلاث مرات وسيغلق التطبيق</string>
+    <string name="M2">بواسطة هذه الأداة ، يمكنك تقييد المستخدم / الأطفال / الأطفال على استخدام الهاتف لفترة محددة          ثم عندما ينتهي الوقت ، سوف تبهت الشاشة لفترة محدودة.</string>
+    <string name="M3">في الإصدار المحترف ، يمكنك تغيير وقت إضاءة الشاشة والوقت الذي تكون فيه باهتة.          النسخة الموالية هي دون الإعلان.          يمكنك استخدام زر التشغيل الميت الذي سيؤدي إلى إيقاف تشغيل الإضاءة حتى تضغط على الشاشة ثلاث مرات.</string>
+    <string name="play_dead">العب الميت</string>
+    <string name="please_buy_pro">يرجى شراء النسخة برو لتنشيطه.أو أدخل قيمة بين 1 و 20 دقيقة</string>
+    <string name="because_we_care">نظرًا لأننا نهتم بك ، فنحن نصنع هذا التطبيق لمساعدتك أنت وأطفالك على الحد من استخدام الهاتف الذكي لفترة محددة تحددها.</string>
+    <string name="welcome_to_blackout">مرحبًا بك في BlackOut</string>
+    <string name="mint">"دقيقة سوف تكون الشاشة ساطعة ثم ستكون باهتة  "</string>
+</resources>

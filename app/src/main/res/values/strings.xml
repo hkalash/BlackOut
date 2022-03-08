@@ -1,0 +1,27 @@
+<resources>
+    <!--<string name="app_name">BlackOut</string>-->
+
+    <string name="on_off" translatable="false">1</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="another_activiny">Start App</string>
+    <string name="turn_off_screen">Test App </string>
+    <string name="turn_on_screen">Stop  App</string>
+    <string name="counter">Start counter</string>
+    <string name="please_enter_a_count_number">Please Enter The Bright Time In Minuets</string>
+    <string name="save_setting">Save Setting</string>
+    <string name="enter_black_time">enter BlackOut time</string>
+    <string name="M1">The app will let the screen bright be On for 20 min then it will Dim for 10 seconds with muting the audio.
+       At any time you can hit the screen three times and the app will close.</string>
+    <string name="M2">By this tool, you can limit the user/babies to use or watch videos and games for a defined time.
+        Then when time is finished the screen bright will Dim for a limited time.</string>
+    <string name="M3">In the professional version, you can change the time the screen will be bright and the time that will be Dim.
+        The professional version is without advertisements.
+        You can use the play dead bottom which will turn the bright off until you tap on the screen three times.</string>
+    <string name="pro_message">Buy Pro to change setting</string>
+    <string name="play_dead">Play Dead</string>
+    <string name="please_buy_pro">Please Buy the Pro Version To Activate it,Or Enter a value between 1 and 20 mint</string>
+    <string name="welcome_to_blackout">Welcome to BlackOut</string>
+    <string name="because_we_care">Because we care about you, we make this app to help you and your children to limit the use of the smartphone for a defined time you set.</string>
+    <string name="mint">  mint the screen will be bright then it will dim </string>
+
+</resources>
