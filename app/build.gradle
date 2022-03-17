@@ -1,6 +1,20 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+
+// added for binding and Room database
+    id 'kotlin-android-extensions'
+
+
+}
+
 
 android {
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     signingConfigs {
         googleplay {
             storeFile file('C:\\Users\\HP\\deployment_cert.der')
@@ -9,12 +23,13 @@ android {
             keyPassword 'vatvat1192'
         }
     }
-    compileSdkVersion 28
+    compileSdkVersion 31
     defaultConfig {
        applicationId "com.smartsoftwaresolutions.blackout"
 
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdkVersion 19
+        targetSdkVersion 31
+        multiDexEnabled = true
         versionCode 7
         versionName "7.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -30,8 +45,8 @@ android {
     productFlavors {
         Free {
             dimension = 'type'
-            minSdkVersion 15
-            targetSdkVersion 28
+            minSdkVersion 19
+            targetSdkVersion 31
            //manifestPlaceholders = [ appLabel: "@string/app_name" ]
             //Configure this flavor specific app name published in Play Store
             resValue "string", "app_name", "BlackOut"
@@ -43,8 +58,8 @@ android {
         }
         Pro {
             dimension = 'type'
-            minSdkVersion 15
-            targetSdkVersion 28
+            minSdkVersion 19
+            targetSdkVersion 31
 
             resValue "string","app_name", "BlackOut pro"
           //  manifestPlaceholders=[ icon:"@mipmap/ic_launcher_pro"]
@@ -52,19 +67,30 @@ android {
             applicationIdSuffix = '.pro'
         }
     }
+
+
 }
 
 dependencies {
+
+    implementation("androidx.multidex:multidex:2.0.1")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //implementation 'com.facebook.stetho:stetho:1.5.0'
 
 //   implementation ' com.google.gms:google-services:4.2.0'
-    implementation 'com.google.android.gms:play-services-ads:18.1.1'
-   // FreeImplementation 'com.google.android.gms:play-services-ads:18.1.1'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+    implementation "androidx.core:core-ktx:1.7.0"
+    //noinspection GradleDependency
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0"
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.10")
+    // FreeImplementation 'com.google.android.gms:play-services-ads:18.1.1'
 
+}
+repositories {
+    mavenCentral()
 }
