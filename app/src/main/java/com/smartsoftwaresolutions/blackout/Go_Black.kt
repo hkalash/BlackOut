@@ -25,7 +25,7 @@ class Go_Black(private val context: Context?) {
     //    int  current_volume;
     var Timer: CountDownTimer?
     var counter: Int
-    var textView: TextView?
+    var textView: TextView? = (context as Activity?)?.findViewById(R.id.textView)
 
     // Check whether this app has android write settings permission.
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -75,7 +75,6 @@ class Go_Black(private val context: Context?) {
 
     init {
         //   this.context = context1.getApplicationContext();
-        textView = (context as Activity?)?.findViewById(R.id.textView)
         // the millisecound in the future is the time set by you
         //  int Set_Time=1000;// every 1000 mili will make a 1 secound
         //freeApp

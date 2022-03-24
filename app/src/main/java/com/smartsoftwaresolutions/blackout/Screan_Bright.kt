@@ -18,7 +18,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.android.gms.ads.*
 
-class Scean_Bright : AppCompatActivity() {
+class Screan_Bright : AppCompatActivity() {
     //ca-app-pub-8537373371656761~5050991485 this is the test admob id
     private var mAdView: AdView? = null
     var counter = 0
@@ -67,12 +67,13 @@ class Scean_Bright : AppCompatActivity() {
                     Log.e("onAdFailedToLoad", "" + errorCode)
                 }
 
-    //                override fun onAdFailedToLoad(errorCode: Int) {
-    //                    super.onAdFailedToLoad(errorCode)
-    //                    Log.e("onAdFailedToLoad", "" + errorCode)
-    //                }
+                //                override fun onAdFailedToLoad(errorCode: Int) {
+                //                    super.onAdFailedToLoad(errorCode)
+                //                    Log.e("onAdFailedToLoad", "" + errorCode)
+                //                }
             }
-            Toast.makeText(this@Scean_Bright, "this is a free version with ads", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@Screan_Bright, "this is a free version with ads", Toast.LENGTH_LONG)
+                .show()
         }
         /** */
         btn_play_Dead = findViewById(R.id.btn_play_Dead)
@@ -94,7 +95,7 @@ class Scean_Bright : AppCompatActivity() {
 //    btn_save.setText(R.string.save_setting);
 //}
 
-// control the audio
+        /**control the audio**/
         mAudioManager = applicationContext.getSystemService(AUDIO_SERVICE) as AudioManager
         // get the current volume
         current_volume = mAudioManager!!.getStreamVolume(AudioManager.STREAM_MUSIC)
@@ -113,21 +114,21 @@ class Scean_Bright : AppCompatActivity() {
             e.printStackTrace()
         }
         default_Timeout = shardPreferencesSettings!!.getInt("S_timeout", 120000)
-        // first thing i will read the shared prefrance then i will check the edit text
+        // first thing i will read the sharedprefrance then i will check the edit text
         count_down = shardPreferencesSettings!!.getInt("key_counter", 3)
         val s = count_down.toString()
-        tv_current_count!!.setText(s + " " + getString(R.string.mint))
+        tv_current_count!!.text = s + " " + getString(R.string.mint)
         //        SharedPreferences.Editor editor = settings.edit();
 //        editor.putInt("current_volume", current_volume);
 //
 //        editor.commit();
         btn_save!!.setOnClickListener(View.OnClickListener {
             val et_text = et!!.getText().toString()
-         //   if (et_text != null && !et_text.isEmpty()) {
+            //   if (et_text != null && !et_text.isEmpty()) {
             if (!et_text.isNullOrEmpty()) {
                 // the text is not empty
                 if (BuildConfig.FLAVOR.equals("Free")) {
-                    val convertedInteger : Int = et_text.toInt()
+                    val convertedInteger: Int = et_text.toInt()
                     if (et_text.toInt() >= 1 && et_text.toInt() <= 20) {
                         //Writing data to SharedPreferences
                         count_down = et_text.toInt()
@@ -142,7 +143,11 @@ class Scean_Bright : AppCompatActivity() {
                         // btn_counter.setTextColor(getResources().getColor(R.color.Red));
                         //  Go_Black();
                     } else {
-                        Toast.makeText(this@Scean_Bright, getString(R.string.please_buy_pro), Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@Screan_Bright,
+                            getString(R.string.please_buy_pro),
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                     // this is a pro version
                 } else {
@@ -157,8 +162,8 @@ class Scean_Bright : AppCompatActivity() {
                     tv_current_count!!.setText(s + " " + getString(R.string.mint))
                     // read the black time
                     val S_balck_time = Black_Time!!.getText().toString()
-                   // if (S_balck_time != null && !S_balck_time.isEmpty()) {
-                    if (S_balck_time.isNullOrEmpty()) {
+                    // if (S_balck_time != null && !S_balck_time.isEmpty()) {
+                    if (S_balck_time.isEmpty()) {
                         // save the value in sharedpreferance
                         Black_count_down = S_balck_time.toInt()
                         // SharedPreferences.Editor editor = settings.edit();
@@ -171,7 +176,8 @@ class Scean_Bright : AppCompatActivity() {
                     // Go_Black();
                 }
             } else {
-                Toast.makeText(this@Scean_Bright, "please enter a value ", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Screan_Bright, "please enter a value ", Toast.LENGTH_LONG)
+                    .show()
             }
         })
         context = applicationContext
@@ -197,7 +203,8 @@ class Scean_Bright : AppCompatActivity() {
          * }); */
         btn_play_Dead!!.setOnClickListener(View.OnClickListener {
             if (BuildConfig.FLAVOR.equals("Free")) {
-                Toast.makeText(this@Scean_Bright, R.string.please_buy_pro, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@Screan_Bright, R.string.please_buy_pro, Toast.LENGTH_LONG)
+                    .show()
             } else {
                 var settingsCanWrite = false
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -214,7 +221,7 @@ class Scean_Bright : AppCompatActivity() {
                 } else {
                     Settings.System.putInt(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, 500)
                     changeScreenBrightness(context, 1)
-                    val intent = Intent(this@Scean_Bright, Black::class.java)
+                    val intent = Intent(this@Screan_Bright, Black::class.java)
                     startActivity(intent)
                 }
             }
@@ -236,7 +243,7 @@ class Scean_Bright : AppCompatActivity() {
             if (!settingsCanWrite && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // if it is a false
                 changeWriteSettingsPermission(context)
             } else {
-                val intent = Intent(this@Scean_Bright, Black::class.java)
+                val intent = Intent(this@Screan_Bright, Black::class.java)
                 startActivity(intent)
                 Settings.System.putInt(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, 1000)
                 changeScreenBrightness(context, 1)
@@ -254,7 +261,11 @@ class Scean_Bright : AppCompatActivity() {
                             override fun onFinish() {
                                 counter = 0
                                 textView!!.setText("FINISH!!")
-                                Settings.System.putInt(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, default_Timeout)
+                                Settings.System.putInt(
+                                    contentResolver,
+                                    Settings.System.SCREEN_OFF_TIMEOUT,
+                                    default_Timeout
+                                )
                                 changeScreenBrightness(context, 255)
                             }
                         }.start()
@@ -308,10 +319,18 @@ class Scean_Bright : AppCompatActivity() {
     // it can not take effect in android emulator.
     private fun changeScreenBrightness(context: Context?, screenBrightnessValue: Int) {
         // Change the screen brightness change mode to manual.
-        Settings.System.putInt(context!!.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL)
+        Settings.System.putInt(
+            context!!.getContentResolver(),
+            Settings.System.SCREEN_BRIGHTNESS_MODE,
+            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL
+        )
         // Apply the screen brightness value to the system, this will change the value in Settings ---> Display ---> Brightness level.
         // It will also change the screen brightness for the device.
-        Settings.System.putInt(context!!.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, screenBrightnessValue)
+        Settings.System.putInt(
+            context!!.getContentResolver(),
+            Settings.System.SCREEN_BRIGHTNESS,
+            screenBrightnessValue
+        )
 
         /*
         Window window = getWindow();
@@ -342,7 +361,7 @@ class Scean_Bright : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                val `in` = Intent(this@Scean_Bright, Black::class.java)
+                val `in` = Intent(this@Screan_Bright, Black::class.java)
                 startActivity(`in`)
                 textView!!.setText("FINISH!!")
                 counter = 0
@@ -361,9 +380,9 @@ class Scean_Bright : AppCompatActivity() {
 
                     // Set media volume level to zero
                     mAudioManager!!.setStreamVolume(
-                            AudioManager.STREAM_MUSIC,  // Stream type
-                            volume,  // Index
-                            AudioManager.FLAG_SHOW_UI // Flags
+                        AudioManager.STREAM_MUSIC,  // Stream type
+                        volume,  // Index
+                        AudioManager.FLAG_SHOW_UI // Flags
                     )
                     // set the sceen time out to half of a second
                     Settings.System.putInt(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, 500)
@@ -392,15 +411,19 @@ class Scean_Bright : AppCompatActivity() {
                         if (!settingsCanWrite && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             changeWriteSettingsPermission(context)
                         } else {
-                            Settings.System.putInt(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT, default_Timeout)
+                            Settings.System.putInt(
+                                contentResolver,
+                                Settings.System.SCREEN_OFF_TIMEOUT,
+                                default_Timeout
+                            )
                             changeScreenBrightness(context, 255)
                         }
                         // change the volume to current one
                         // Set media volume level to zero
                         mAudioManager!!.setStreamVolume(
-                                AudioManager.STREAM_MUSIC,  // Stream type
-                                current_volume,  // Index
-                                AudioManager.FLAG_SHOW_UI // Flags
+                            AudioManager.STREAM_MUSIC,  // Stream type
+                            current_volume,  // Index
+                            AudioManager.FLAG_SHOW_UI // Flags
                         )
                     }
                 }.start()

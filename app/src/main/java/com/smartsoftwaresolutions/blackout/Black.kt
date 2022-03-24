@@ -35,7 +35,7 @@ class Black : AppCompatActivity() {
         shardPreferencesSettings = getSharedPreferences("MyApp_Settings", MODE_PRIVATE)
         default_Timeout= shardPreferencesSettings?.getInt("S_timeOut",120000)!!
         //default_Timeout = shardPreferencesSettings.getInt("S_timeout", 120000)
-        val btn_black = findViewById<Button?>(R.id.btn_black)
+        val btn_black = findViewById<Button?>(R.id.btnBlack)
         context = applicationContext
         btn_black.setOnClickListener {
             C++ // C is the number of times you will hit the screen to get the bright on
