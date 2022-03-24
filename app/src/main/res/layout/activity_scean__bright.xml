@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
-    tools:context=".Scean_Bright">
+    tools:context=".Screan_Bright">
 
     <Button
         android:id="@+id/test_screen"
@@ -111,12 +111,14 @@
         android:hint="@string/please_enter_a_count_number"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:minHeight="48dp"
         android:textColor="@android:color/white"
         android:textColorHint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" tools:targetApi="o"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/btn_save"
@@ -179,6 +181,7 @@
         android:hint="@string/enter_black_time"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:minHeight="48dp"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -187,7 +190,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="397dp"
         android:layout_height="wrap_content"

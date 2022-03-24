@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     //   private Button btn1,btn3;
-    private var btn3: Button? = null
+    private var btnStartApp: Button? = null
     private val powerManager: PowerManager? = null
     private val wakeLock: PowerManager.WakeLock? = null
     private val field = 0x00000020
@@ -40,9 +40,9 @@ class MainActivity : AppCompatActivity() {
 
         //  btn1 = (Button) findViewById(R.id.btn1);
         // btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = findViewById(R.id.btn3)
-        btn3?.setOnClickListener(View.OnClickListener { // Intent intent=new Intent(MainActivity.this,lock_phone.class);
-            val intent = Intent(this@MainActivity, Scean_Bright::class.java)
+        btnStartApp = findViewById(R.id.btnStartApp)
+        btnStartApp?.setOnClickListener(View.OnClickListener { // Intent intent=new Intent(MainActivity.this,lock_phone.class);
+            val intent = Intent(this@MainActivity, Screan_Bright::class.java)
             // Intent intent=new Intent(MainActivity.this,Audio.class);
             // Intent intent=new Intent(MainActivity.this,SensorActivity.class);
             startActivity(intent)
