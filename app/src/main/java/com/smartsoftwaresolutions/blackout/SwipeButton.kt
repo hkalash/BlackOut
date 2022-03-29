@@ -49,9 +49,7 @@ class SwipeButton : RelativeLayout {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT)
         layoutParamsView.addRule(CENTER_IN_PARENT, TRUE)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            background.background = ContextCompat.getDrawable(context!!, R.drawable.buttonshape)
-        }
+        background.background = ContextCompat.getDrawable(context!!, R.drawable.buttonshape)
         addView(background, layoutParamsView)
         //    inal TextView centerText = new TextView(context);
         val centerText = TextView(context)
@@ -76,7 +74,7 @@ class SwipeButton : RelativeLayout {
         layoutParamsButton.addRule(ALIGN_PARENT_LEFT, TRUE)
         layoutParamsButton.addRule(CENTER_VERTICAL, TRUE)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            swipeButton.background = ContextCompat.getDrawable(context!!, R.drawable.shape_button)
+            swipeButton.background = ContextCompat.getDrawable(context, R.drawable.shape_button)
         }
         swipeButton.setImageDrawable(disabledDrawable)
         addView(swipeButton, layoutParamsButton)
@@ -85,7 +83,7 @@ class SwipeButton : RelativeLayout {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun getButtonTouchListener(): OnTouchListener? {
-        return OnTouchListener { v, event ->
+        return OnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN ->                             //  Toast.makeText(this,"helow from action down",Toast.LENGTH_LONG).show();
                     //   Toast.makeText(getContext(),"in the start",Toast.LENGTH_LONG).show();
@@ -131,7 +129,7 @@ class SwipeButton : RelativeLayout {
     }
 
     private fun expandButton() {
-        val go_black1 = Go_Black(context)
+//        val go_black1 = Go_Black(context)
 
         val positionAnimator = ValueAnimator.ofFloat(slidingButton!!.getX(), 0f)
         positionAnimator.addUpdateListener {
