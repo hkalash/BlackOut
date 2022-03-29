@@ -128,7 +128,7 @@ class Screan_Bright : AppCompatActivity() {
             if (!et_text.isNullOrEmpty()) {
                 // the text is not empty
                 if (BuildConfig.FLAVOR.equals("Free")) {
-                    val convertedInteger: Int = et_text.toInt()
+
                     if (et_text.toInt() >= 1 && et_text.toInt() <= 20) {
                         //Writing data to SharedPreferences
                         count_down = et_text.toInt()
@@ -300,10 +300,8 @@ class Screan_Bright : AppCompatActivity() {
     // Check whether this app has android write settings permission.
     @RequiresApi(api = Build.VERSION_CODES.M)
     private fun hasWriteSettingsPermission(context: Context?): Boolean {
-        var ret = true
         // Get the result from below code.
-        ret = Settings.System.canWrite(context)
-        return ret
+        return Settings.System.canWrite(context)
     }
 
     // Start can modify system settings panel to let user change the write settings permission.
@@ -327,7 +325,7 @@ class Screan_Bright : AppCompatActivity() {
         // Apply the screen brightness value to the system, this will change the value in Settings ---> Display ---> Brightness level.
         // It will also change the screen brightness for the device.
         Settings.System.putInt(
-            context!!.getContentResolver(),
+            context.contentResolver,
             Settings.System.SCREEN_BRIGHTNESS,
             screenBrightnessValue
         )
