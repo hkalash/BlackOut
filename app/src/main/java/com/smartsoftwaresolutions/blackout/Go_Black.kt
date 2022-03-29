@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.smartsoftwaresolutions.blackout.Black
 
 class Go_Black(private val context: Context?) {
     private var shardPreferencesSettings: SharedPreferences? = null
@@ -30,10 +29,8 @@ class Go_Black(private val context: Context?) {
     // Check whether this app has android write settings permission.
     @RequiresApi(api = Build.VERSION_CODES.M)
     private fun hasWriteSettingsPermission(context: Context?): Boolean {
-        var ret = true
         // Get the result from below code.
-        ret = Settings.System.canWrite(context)
-        return ret
+        return Settings.System.canWrite(context)
     }
 
     // Start can modify system settings panel to let user change the write settings permission.
