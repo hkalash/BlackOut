@@ -3,9 +3,9 @@
 
     <string name="on_off" translatable="false">1</string>
     <string name="_2" translatable="false">2</string>
-    <string name="another_activiny">Start App</string>
+    <string name="another_activiny">Start</string>
     <string name="turn_off_screen">Test App </string>
-    <string name="turn_on_screen">Stop  App</string>
+    <string name="turn_on_screen">Stop</string>
     <string name="counter">Start counter</string>
     <string name="please_enter_a_count_number">Please Enter The Bright Time In Minuets</string>
     <string name="save_setting">Save Setting</string>
@@ -23,6 +23,6 @@
     <string name="welcome_to_blackout">Welcome to BlackOut</string>
     <string name="because_we_care">Because we care about you, we make this app to help you and your children to limit the use of the smartphone for a defined time you set.</string>
     <string name="mint">  mint the screen will be bright then it will dim </string>
-    <string name="app_name">BlackOut</string>
+
 
 </resources>
