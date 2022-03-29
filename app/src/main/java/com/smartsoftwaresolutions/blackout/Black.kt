@@ -66,10 +66,8 @@ class Black : AppCompatActivity() {
     // Check whether this app has android write settings permission.
     @RequiresApi(api = Build.VERSION_CODES.M)
     private fun hasWriteSettingsPermission(context: Context?): Boolean {
-        var ret = true
         // Get the result from below code.
-        ret = Settings.System.canWrite(context)
-        return ret
+        return Settings.System.canWrite(context)
     }
 
     // Start can modify system settings panel to let user change the write settings permission.
