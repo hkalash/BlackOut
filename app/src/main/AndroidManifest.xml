@@ -17,9 +17,19 @@
         android:theme="@style/AppTheme"
         android:versionCode="2">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SettingActivity"
-            android:exported="false" />
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+            android:exported="false" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <!-- android:value="ca-app-pub-3940256099942544~3347511713" -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -36,11 +46,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
